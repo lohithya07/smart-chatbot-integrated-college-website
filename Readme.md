@@ -227,3 +227,6 @@ Potential features to add:
 ---
 
 **Made with ❤️ for Women Empowerment**
+
+here you can get live og projct:
+https://lohithya07.github.io/smart-chatbot-integrated-college-website
