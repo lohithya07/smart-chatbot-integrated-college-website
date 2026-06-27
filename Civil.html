@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civil Engineering - GPWS Siddipet</title>
+    <link rel="stylesheet" href="smartdesk.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <style>
+    :root {
+      --primary-orange: #24c2ad;
+      --primary-light: #f59e0b;
+      --accent-gold: #f59e0b;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: var(--gray-50);
+    }
+
+    header {
+      background: var(--white);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+     .logo img{
+      width:50px;
+      height: 50px;
+      border-radius:10px;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary-orange), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .logo-text h1 {
+      font-size: 1.3rem;
+      color: var(--primary-orange);
+      font-weight: 700;
+    }
+
+    .back-btn {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary-orange), var(--primary-light));
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+
+    .back-btn:hover { transform: translateY(-2px); }
+
+    .dept-hero {
+      background: linear-gradient(135deg, var(--primary-orange), var(--primary-light));
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dept-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .dept-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dept-icon-large {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+
+    .dept-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .dept-hero p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-orange);
+      margin-bottom: 2rem;
+      font-weight: 700;
+      border-left: 5px solid var(--primary-light);
+      padding-left: 1rem;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .overview-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-top: 4px solid var(--primary-light);
+      transition: transform 0.3s;
+    }
+
+    .overview-card:hover { transform: translateY(-5px); }
+
+    .overview-card h3 {
+      color: var(--primary-orange);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .overview-card p, .overview-card ul {
+      color: var(--gray-700);
+      line-height: 1.8;
+    }
+
+    .overview-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .overview-card ul li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .overview-card ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-light);
+      font-weight: bold;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .faculty-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .faculty-card:hover { transform: translateY(-5px); }
+
+    .faculty-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #c9a679, #fed7aa);
+    }
+
+    .faculty-info { padding: 1.5rem; }
+
+    .faculty-info h4 {
+      color: var(--primary-orange);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .faculty-info .designation {
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .faculty-info .qualification {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+
+    .labs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .lab-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .lab-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .lab-info { padding: 1.5rem; }
+
+    .lab-info h4 {
+      color: var(--primary-orange);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .lab-info p {
+      color: var(--gray-700);
+      margin-bottom: 1rem;
+    }
+
+    .lab-facilities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .facility-tag {
+      background: var(--gray-100);
+      color: var(--primary-orange);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .curriculum-container {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 4rem;
+    }
+
+    .year-section { margin-bottom: 2rem; }
+
+    .year-section h4 {
+      color: var(--primary-orange);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .subject-item {
+      background: var(--gray-50);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary-light);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .achievement-card {
+      background: linear-gradient(135deg, #fff7ed, #ffffff);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--accent-gold);
+    }
+
+    .achievement-card h4 {
+      color: var(--primary-orange);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .achievement-card p { color: var(--gray-700); }
+
+    footer {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .dept-hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.8rem; }
+      .overview-grid, .faculty-grid, .labs-grid, .subjects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <div class="logo">
+            <img src="assets/logo2.png" alt="gpw">
+          </div>
+        </div>
+        <div class="logo-text">
+          <h1>Government Polytechnic for Women, Siddipet</h1>
+        </div>
+      </a>
+      <a href="index.html#departments" class="back-btn">← Back to Home</a>
+    </nav>
+  </header>
+
+  <section class="dept-hero">
+    <div class="dept-hero-content">
+      <div class="dept-icon-large">🏗️</div>
+      <h1>Civil Engineering</h1>
+      <p>Building tomorrow's infrastructure through sustainable practices, innovative design, and excellence in structural, environmental, and urban engineering</p>
+    </div>
+  </section>
+
+  <div class="content-section">
+    <h2 class="section-title">Department Overview</h2>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <h3>📚 About Department</h3>
+        <p>The Civil Engineering department focuses on planning, designing, and constructing infrastructure projects. We train students in structural design, transportation, water resources, environmental engineering, and sustainable construction practices.</p>
+      </div>
+      <div class="overview-card">
+        <h3>🎯 Program Details</h3>
+        <ul>
+          <li>Duration: 3 Years (6 Semesters)</li>
+          <li>Intake: 60 Students per year</li>
+          <li>Affiliation: SBTET, Telangana</li>
+          <li>Approval: AICTE Approved</li>
+        </ul>
+      </div>
+      <div class="overview-card">
+        <h3>💼 Career Opportunities</h3>
+        <ul>
+          <li>Civil Engineer</li>
+          <li>Structural Engineer</li>
+          <li>Site Engineer</li>
+          <li>Project Manager</li>
+          <li>Quantity Surveyor</li>
+          <li>Construction Manager</li>
+          <li>Urban Planner</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Vision & Mission</h2>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <h3>🔭 Vision</h3>
+        <p>To be a premier department in civil engineering education, producing competent professionals who contribute to sustainable infrastructure development and societal progress through innovative and ethical practices.</p>
+      </div>
+      <div class="overview-card">
+        <h3>🎯 Mission</h3>
+        <ul>
+          <li>Provide quality civil engineering education</li>
+          <li>Focus on sustainable construction</li>
+          <li>Industry-oriented practical training</li>
+          <li>Promote research and innovation</li>
+          <li>Develop socially responsible engineers</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Our Faculty</h2>
+    <div class="faculty-grid">
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon2.jpg" alt="HOD">
+        <div class="faculty-info">
+          <h4>Mrs.M.Husna</h4>
+          <p class="designation">Head of Department/lecturer</p>
+          <p class="qualification">M.Tech (Structural Engineering),B.tech(Civil)<br>15+ years experience</p>
+        </div>
+      </div>
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon1.jpg" alt="Faculty">
+        <div class="faculty-info">
+          <h4>Mr.B.Raju</h4>
+          <p class="designation">Lecturer in Civil</p>
+          <p class="qualification">M.E(Turbo Machinary), B.Tech(Mechanical)<br>15+ years experience</p>
+        </div>
+      </div>
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon1.jpg" alt="Faculty">
+        <div class="faculty-info">
+          <h4>Mr.G.Rambabu</h4>
+          <p class="designation">Lecturer (civil)</p>
+          <p class="qualification">Bachelor in Engineering(Civil)<br>14+ years experience</p>
+        </div>
+      </div>
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon1.jpg" alt="Faculty">
+        <div class="faculty-info">
+          <h4>Mr.B.Charan</h4>
+          <p class="designation">Guest Lecturer</p>
+          <p class="qualification">M.Tech (Geotechnical Engg),B.tech(civil)<br>6-months experience</p>
+        </div>
+      </div>
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon2.jpg" alt="Faculty">
+        <div class="faculty-info">
+          <h4>Ms.Veera</h4>
+          <p class="designation">Guest Lecturer</p>
+          <p class="qualification">M.Tech (Geotechnical Engg),B.tech(civil)<br>6-months experience</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Laboratories & Facilities</h2>
+    <div class="labs-grid">
+      <div class="lab-card">
+        <img class="lab-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop" alt="Surveying Lab">
+        <div class="lab-info">
+          <h4>Surveying Laboratory</h4>
+          <p>Equipped with Total Station, Theodolite, Levels, and modern surveying instruments.</p>
+          <div class="lab-facilities">
+            <span class="facility-tag">Total Station</span>
+            <span class="facility-tag">Theodolite</span>
+            <span class="facility-tag">Dumpy Level</span>
+            <span class="facility-tag">GPS Equipment</span>
+          </div>
+        </div>
+      </div>
+      <div class="lab-card">
+        <img class="lab-img" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop" alt="Concrete Lab">
+        <div class="lab-info">
+          <h4>Concrete Testing Lab</h4>
+          <p>Facilities for testing cement, concrete, aggregates, and other construction materials.</p>
+          <div class="lab-facilities">
+            <span class="facility-tag">UTM</span>
+            <span class="facility-tag">CTM</span>
+            <span class="facility-tag">Cube Testing</span>
+            <span class="facility-tag">NDT Equipment</span>
+          </div>
+        </div>
+      </div>
+      <div class="lab-card">
+        <img class="lab-img" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop" alt="CAD Lab">
+        <div class="lab-info">
+          <h4>CAD & Design Lab</h4>
+          <p>Computer lab with AutoCAD, Revit, STAAD Pro, and other design software.</p>
+          <div class="lab-facilities">
+            <span class="facility-tag">AutoCAD</span>
+            <span class="facility-tag">Revit</span>
+            <span class="facility-tag">STAAD Pro</span>
+            <span class="facility-tag">3D Modeling</span>
+          </div>
+        </div>
+      </div>
+      <div class="lab-card">
+        <img class="lab-img" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop" alt="Soil Lab">
+        <div class="lab-info">
+          <h4>Soil Mechanics Lab</h4>
+          <p>Complete setup for soil testing including CBR, triaxial, consolidation tests.</p>
+          <div class="lab-facilities">
+            <span class="facility-tag">CBR Test</span>
+            <span class="facility-tag">Triaxial Test</span>
+            <span class="facility-tag">Consolidation</span>
+            <span class="facility-tag">Permeability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Curriculum Highlights</h2>
+    <div class="curriculum-container">
+       <div class="year-section">
+        <h4>First Year</h4>
+        <div class="sem-grid">
+        <h3>Semester-I</h3>
+         <div class="subjects-grid">
+          <div class="subject-item">Mathematics</div>
+          <div class="subject-item">Physics</div>
+          <div class="subject-item">Engineering Chemistry</div>
+          <div class="subject-item">Computer Hardware</div>
+          <div class="subject-item">BEEE</div>
+          <div class="subject-item">English Communication</div>
+          <div class="subject-item">Engineering Drawing</div>
+          <div class="subject-item">Web Technologies</div>
+          <div class="subject-item">Web Technologies</div>
+          <div class="subject-item">Web Technologies</div>
+          </div>
+          </div>
+        <div class="sem-grid">
+        <h3>Semester-II</h3>
+          <div class="subjects-grid">
+          <div class="subject-item"> Advanced English</div>
+           <div class="subject-item"> Engineering Mathematics</div>
+          <div class="subject-item">Advanced Engineering Chemistry</div>
+          <div class="subject-item"> Applied Physics</div>
+          <div class="subject-item">Engineering Mechanicss</div>
+          <div class="subject-item">Programming In C</div>
+          <div class="subject-item">Engineering Drawing - II</div>
+          <div class="subject-item">Material Testing Lab</div>
+          <div class="subject-item">Applied Science Lab</div>
+          <div class="subject-item">Programming In C Lab</div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h4>Second Year</h4>
+        <div class="sem-grid">
+        <h3>Semester-III</h3>
+         <div class="subjects-grid">
+          <div class="subject-item">Applied Engineering Mathematics</div>
+          <div class="subject-item">Strength of Materials</div>
+          <div class="subject-item">Hydraulics</div>
+          <div class="subject-item">Levelling Surveying</div>
+          <div class="subject-item">Transportation Engineering</div>
+          <div class="subject-item">Construction Practice</div>
+          <div class="subject-item">Building Drawing</div>
+          <div class="subject-item">Hydraulics Lab</div>
+          <div class="subject-item">Levelling Surveying Lab</div>
+          <div class="subject-item">Communication Skills & Life Skills Lab</div>
+          </div>
+          </div>
+        <div class="sem-grid">
+        <h3>Semester-IV</h3>
+          <div class="subjects-grid">
+          <div class="subject-item">Advanced Engineering Mathematics</div>
+          <div class="subject-item">Reinforced Concrete Structures</div>
+          <div class="subject-item">Irrigation Engineering</div>
+          <div class="subject-item">Basic Quantity Surveying</div>
+          <div class="subject-item">Water Supply & Sanitary Engineering</div>
+          <div class="subject-item">Advanced Surveying</div>
+          <div class="subject-item">Civil Engineering Drawing</div>
+          <div class="subject-item">Advanced Surveying Lab</div>
+          <div class="subject-item">Basic Civil Engineering CAD Lab</div>
+          <div class="subject-item">Employability Skills Lab </div>
+        </div>
+      </div>
+
+      <div class="year-section">
+        <h4>Third Year</h4>
+        <div class="sem-grid">
+        <h3>Semester-V</h3>
+         <div class="subjects-grid">
+          <div class="subject-item">Construction Management And Entrepreneurship</div>
+          <div class="subject-item">Steel Structures</div>
+          <div class="subject-item">Soil Mechanics</div>
+          <div class="subject-item">Advanced Quantity Surveying</div>
+          <div class="subject-item">Theory Of Structures <br>OR<br> Integrated Waste Management</div>
+          <div class="subject-item">Construction Technology And Valuation <br>OR<br>Green Buildings And Energy Conservation</div>
+          <div class="subject-item">Structural Engineering Drawing</div>
+          <div class="subject-item">Civil Engineering Computer Applications Lab</div>
+          <div class="subject-item">Construction Technology Lab</div>
+          <div class="subject-item">Project Work</div>
+          </div>
+          </div>
+        <div class="sem-grid">
+        <h3>Semester-VI</h3>
+          <div class="subjects-grid">
+          <div class="subject-item">Applied Mathematics</div>
+          <div class="subject-item">Advanced Engineering Chemistry</div>
+          <div class="subject-item">Physics</div>
+          <div class="subject-item">Web Technologies</div>
+          <div class="subject-item">C Programming</div>
+          <div class="subject-item">Engineering Drawing</div>
+          <div class="subject-item">English Communication</div>
+          <div class="subject-item">Engineering Drawing</div>
+          <div class="subject-item">Web Technologies</div>
+          
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Achievements & Activities</h2>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <h4>🏆 National Competition</h4>
+        <p>Students won 2nd prize in National Level Bridge Design Competition 2023</p>
+      </div>
+      <div class="achievement-card">
+        <h4>💼 Excellent Placements</h4>
+        <p>92% placement with L&T, Shapoorji Pallonji, Tata Projects, NCC</p>
+      </div>
+      <div class="achievement-card">
+        <h4>🎓 Industry Training</h4>
+        <p>Regular training on STAAD Pro, AutoCAD, Revit, and modern construction tech</p>
+      </div>
+      <div class="achievement-card">
+        <h4>🔬 Field Projects</h4>
+        <p>15+ live projects on sustainable construction and green buildings</p>
+      </div>
+      <div class="achievement-card">
+        <h4>🤝 Site Visits</h4>
+        <p>Regular visits to construction sites, dams, bridges, and infrastructure projects</p>
+      </div>
+      <div class="achievement-card">
+        <h4>📚 Seminars & Workshops</h4>
+        <p>Conducted workshops on BIM, Sustainable Construction, Smart Cities</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Government Polytechnic for Women, Siddipet. All rights reserved.</p>
+  </footer>
+   <script src="smartdesk.js"></script>
+</body>
+</html>

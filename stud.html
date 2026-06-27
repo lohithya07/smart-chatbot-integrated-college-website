@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Services - Government Polytechnic for Women, Siddipet</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #600080;
+      --primary-dark: #4a0062;
+      --secondary: #ff6b9d;
+      --accent: #ffd700;
+      --text: #333;
+      --text-light: #666;
+      --bg: #ffffff;
+      --card-bg: #f8f9fa;
+      --border: #e0e0e0;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --info: #3b82f6;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Header */
+     header {
+
+background: linear-gradient(135deg, rgba(47, 184, 161, 0.85) 0%, rgba(139,0,199,0.75) 100%);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+    .logo img{
+      width:50px;
+      height: 50px;
+      border-radius:10px;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .logo-text h1 {
+      font-size: 1.3rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    .back-btn {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #b488c9ff, #10b981);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .dept-hero {
+     background: linear-gradient(135deg, #b109c0, #81e8f0);
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dept-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .dept-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dept-icon-large {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+
+    .dept-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .dept-hero p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Content Section */
+    .content-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-blue);
+      margin-bottom: 2rem;
+      font-weight: 700;
+      border-left: 5px solid var(--primary-light);
+      padding-left: 1rem;
+    }
+    /* Service Cards Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(96,0,128,0.2);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .service-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      animation: fadeIn 0.3s;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.3s;
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 2rem;
+      border-radius: 20px 20px 0 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .modal-header h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .close-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: rotate(90deg);
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+
+    /* Forms */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(96,0,128,0.1);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(96,0,128,0.3);
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Hover effects for links */
+    a[href]:hover {
+      transform: translateX(5px);
+    }
+
+    /* Results Display */
+    .results-container {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .result-status {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .status-pass {
+      background: #d1fae5;
+      color: var(--success);
+    }
+
+    .status-fail {
+      background: #fee2e2;
+      color: var(--error);
+    }
+
+    .result-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.25rem;
+    }
+
+    .detail-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Notifications */
+    .notification-item {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--info);
+      display: flex;
+      gap: 1rem;
+      transition: all 0.3s;
+    }
+
+    .notification-item:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .notification-item.urgent {
+      border-left-color: var(--error);
+      background: #fef2f2;
+    }
+
+    .notification-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .notification-content h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .notification-date {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+
+    /* Timetable */
+    .timetable-container {
+      overflow-x: auto;
+    }
+
+    .timetable {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .timetable th,
+    .timetable td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timetable th {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-weight: 600;
+    }
+
+    .timetable tr:hover {
+      background: var(--card-bg);
+    }
+
+    .subject-code {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Exam Schedule */
+    .exam-schedule {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .exam-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      border-left: 4px solid var(--warning);
+      transition: all 0.3s;
+    }
+
+    .exam-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .exam-date {
+      display: inline-block;
+      background: var(--warning);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    /* Loading Spinner */
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .loading.active {
+      display: block;
+    }
+
+    .spinner {
+      border: 4px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-top {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .page-title h2 {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .timetable {
+        font-size: 0.9rem;
+      }
+
+      .timetable th,
+      .timetable td {
+        padding: 0.75rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">   
+          <div class="logo">
+            <img src="assets/logo2.png" alt="gpw">
+          </div>
+         </div>
+        <div class="logo-text">
+          <h1>Government Polytechnic for Women,Siddipet</h1>
+        </div>
+      </a>
+      <a href="index.html#departments" class="back-btn">← Back to Home</a>
+    </nav>
+  </header>
+
+  <section class="dept-hero">
+    <div class="dept-hero-content">
+      <div class="dept-icon-large">💻</div>
+      <h1>Student Services</h1>
+      <p>Access exam details, results, timetables, attendence , feedback and  important notifications</p>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Page Title --><span></span>
+  </div>
+    <!-- Services Grid -->
+    <div class="services-grid">
+      <!-- Exam Details -->
+      <div class="service-card" onclick="openModal('examModal')">
+        <div class="service-icon">📝</div>
+        <h3>Exam Details</h3>
+        <p>View upcoming exam schedules, important dates, and examination guidelines</p>
+        <span class="service-badge">Updated Daily</span>
+      </div>
+
+      <!-- Results -->
+      <div class="service-card" onclick="openModal('resultsModal')">
+        <div class="service-icon">📊</div>
+        <h3>Check Results</h3>
+        <p>Access your semester results directly from SBTET official portal</p>
+        <span class="service-badge">Official SBTET Link</span>
+      </div>
+
+      <!-- Attendance -->
+      <div class="service-card" onclick="openModal('attendanceModal')">
+        <div class="service-icon">📋</div>
+        <h3>Check Attendance</h3>
+        <p>View your attendance records and percentage from SBTET portal</p>
+        <span class="service-badge">Real-time Updates</span>
+      </div>
+
+      <!-- Timetable -->
+      <div class="service-card" onclick="openModal('timetableModal')">
+        <div class="service-icon">📅</div>
+        <h3>Timetable</h3>
+        <p>View class schedules, exam timetables, and academic calendar</p>
+        <span class="service-badge">Always Updated</span>
+      </div>
+
+      <!-- Notifications -->
+      <div class="service-card" onclick="openModal('notificationsModal')">
+        <div class="service-icon">🔔</div>
+        <h3>Notifications</h3>
+        <p>Stay informed about important announcements and college updates</p>
+        <span class="service-badge">Real-time</span>
+      </div>
+
+      <!-- Feedback -->
+      <div class="service-card" onclick="openModal('feedbackModal')">
+        <div class="service-icon">⭐</div>
+        <h3>Student Feedback</h3>
+        <p>Submit your feedback for faculty and courses - Required for hall tickets</p>
+        <span class="service-badge">Mandatory</span>
+      </div>
+
+      <!-- Hall Tickets -->
+      <div class="service-card" onclick="openModal('hallticketModal')">
+        <div class="service-icon">🎫</div>
+        <h3>Hall Tickets</h3>
+        <p>Download your examination hall tickets from SBTET portal</p>
+        <span class="service-badge">After Feedback</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exam Details Modal -->
+  <div id="examModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>📝 Examination Schedule</h3>
+        <p>Upcoming examinations and important dates</p>
+        <button class="close-btn" onclick="closeModal('examModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="exam-schedule">
+          <div class="exam-card">
+            <span class="exam-date">📅 December 15-20, 2025</span>
+            <h4>Mid-Term-II Examinations - Semester III</h4>
+            <p><strong>Departments:</strong> CSE, EEE, Civil Engineering</p>
+            <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+            <p><strong>Instructions:</strong> Students must carry their hall tickets and ID cards. Report 30 minutes before exam time.</p>
+          </div>
+
+          <div class="exam-card">
+            <span class="exam-date">📅 January 10-25, 2025</span>
+            <h4>End Semester Examinations - All Semesters</h4>
+            <p><strong>Departments:</strong> All Departments</p>
+            <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+            <p><strong>Instructions:</strong> Detailed timetable will be published by December 20, 2024</p>
+          </div>
+
+          <div class="exam-card">
+            <span class="exam-date">📅 February 5, 2025</span>
+            <h4>Practical Examinations</h4>
+            <p><strong>Departments:</strong> CSE, EEE (Lab courses)</p>
+            <p><strong>Duration:</strong> As per department schedule</p>
+            <p><strong>Instructions:</strong> Check department notice boards for specific timings</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1.5rem; background: #fef3c7; border-radius: 10px; border-left: 4px solid var(--warning);">
+          <h4 style="color: var(--warning); margin-bottom: 0.5rem;">⚠️ Important Guidelines</h4>
+          <ul style="margin-left: 1.5rem; color: var(--text);">
+            <li>Hall tickets must be downloaded from student portal</li>
+            <li>No electronic devices allowed in examination hall</li>
+            <li>Reach 30 minutes before exam commencement</li>
+            <li>Carry valid ID proof along with hall ticket</li>
+            <li>Follow dress code as per college regulations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Modal -->
+  <div id="resultsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>📊 Check Your Results - SBTET Portal</h3>
+        <p>Access official examination results</p>
+        <button class="close-btn" onclick="closeModal('resultsModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem; text-align: center;">
+          <h3 style="margin-bottom: 1rem;">🎓 Official SBTET Results Portal</h3>
+          <p style="margin-bottom: 1.5rem; opacity: 0.95;">Check your examination results directly from the State Board of Technical Education and Training (SBTET), Telangana official website</p>
+          <a href="https://sbtet.telangana.gov.in/index.html#!/index/DiplomaStudentResult" target="_blank" class="btn" style="background: white; color: var(--primary); display: inline-flex;">
+            <span>Go to SBTET Results Portal</span>
+            <span>🔗</span>
+          </a>
+        </div>
+
+        <div style="background: #fef3c7; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--warning); margin-bottom: 2rem;">
+          <h4 style="color: var(--warning); margin-bottom: 0.75rem;">📌 How to Check Your Results:</h4>
+          <ol style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li>Click on "Go to SBTET Results Portal" button above</li>
+            <li>Select your examination year and semester</li>
+            <li>Enter your PIN (Hall Ticket Number)</li>
+            <li>Click on "Get Result" button</li>
+            <li>Your result will be displayed on screen</li>
+            <li>You can download or print your result for future reference</li>
+          </ol>
+        </div>
+
+        <div style="background: #e0f2fe; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--info);">
+          <h4 style="color: var(--info); margin-bottom: 0.75rem;">ℹ️ Important Information:</h4>
+          <ul style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li><strong>Result Declaration:</strong> Results are published as per SBTET schedule</li>
+            <li><strong>Hall Ticket Number:</strong> Keep your hall ticket ready before checking results</li>
+            <li><strong>Recounting/Revaluation:</strong> Apply within the stipulated time period on SBTET portal</li>
+            <li><strong>Original Certificates:</strong> Collect from college office after announcement</li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px; border: 2px solid var(--border);">
+          <h4 style="color: var(--primary); margin-bottom: 1rem;">🔗 Other Useful SBTET Links:</h4>
+          <div style="display: grid; gap: 1rem;">
+            <a href="https://sbtet.telangana.gov.in/" target="_blank" style="padding: 1rem; background: var(--card-bg); border-radius: 8px; text-decoration: none; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s;">
+              <span>🏠</span>
+              <span>SBTET Official Website</span>
+            </a>
+            <a href="https://sbtet.telangana.gov.in/index.html#!/index/DiplomaHallticket" target="_blank" style="padding: 1rem; background: var(--card-bg); border-radius: 8px; text-decoration: none; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s;">
+              <span>🎫</span>
+              <span>Download Hall Tickets</span>
+            </a>
+            <a href="https://sbtet.telangana.gov.in/" target="_blank" style="padding: 1rem; background: var(--card-bg); border-radius: 8px; text-decoration: none; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s;">
+              <span>📝</span>
+              <span>Apply for Recounting/Revaluation</span>
+            </a>
+            <a href="https://sbtet.telangana.gov.in/index.html#!/index/Notifications" target="_blank" style="padding: 1rem; background: var(--card-bg); border-radius: 8px; text-decoration: none; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s;">
+              <span>📄</span>
+              <span>Examination Notifications</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(96,0,128,0.1), rgba(255,107,157,0.1)); border-radius: 10px;">
+          <p style="color: var(--text-light); margin-bottom: 1rem;">For any queries regarding results, contact:</p>
+          <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem;">📧 examcell@gpwsiddipet.edu.in</p>
+          <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem;">📞 +91 8728 234567</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attendance Modal -->
+  <div id="attendanceModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>📋 Check Your Attendance - SBTET Portal</h3>
+        <p>View your attendance records and percentage</p>
+        <button class="close-btn" onclick="closeModal('attendanceModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem; text-align: center;">
+          <h3 style="margin-bottom: 1rem;">📊 Official SBTET Attendance Portal</h3>
+          <p style="margin-bottom: 1.5rem; opacity: 0.95;">Check your attendance records and ensure you meet the minimum attendance requirement (75%) for examination eligibility</p>
+          <a href="https://sbtet.telangana.gov.in/" target="_blank" class="btn" style="background: white; color: var(--primary); display: inline-flex;">
+            <span>Go to SBTET Attendance Portal</span>
+            <span>🔗</span>
+          </a>
+        </div>
+
+        <div style="background: #fef2f2; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--error); margin-bottom: 2rem;">
+          <h4 style="color: var(--error); margin-bottom: 0.75rem;">⚠️ Attendance Requirement Alert:</h4>
+          <ul style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li><strong>Minimum Required:</strong> 75% attendance is mandatory to appear for examinations</li>
+            <li><strong>Condonation:</strong> Available only in exceptional cases with valid medical certificates</li>
+            <li><strong>Track Regularly:</strong> Monitor your attendance weekly to avoid last-minute issues</li>
+            <li><strong>Action Required:</strong> If attendance falls below 75%, contact your class teacher immediately</li>
+          </ul>
+        </div>
+
+        <div style="background: #fef3c7; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--warning); margin-bottom: 2rem;">
+          <h4 style="color: var(--warning); margin-bottom: 0.75rem;">📌 How to Check Your Attendance:</h4>
+          <ol style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li>Click on "Go to SBTET Attendance Portal" button above</li>
+            <li>Navigate to the Student Services or Attendance section</li>
+            <li>Select your college code: <strong>520 (GPWS Siddipet)</strong></li>
+            <li>Enter your PIN (Hall Ticket Number) or Roll Number</li>
+            <li>Select the current semester</li>
+            <li>Click on "View Attendance" or "Submit" button</li>
+            <li>Your attendance details will be displayed subject-wise</li>
+          </ol>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <div style="background: #d1fae5; padding: 1.5rem; border-radius: 10px; text-align: center; border: 2px solid var(--success);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">✅</div>
+            <h4 style="color: var(--success); margin-bottom: 0.5rem;">Excellent</h4>
+            <p style="color: var(--text); font-size: 0.9rem;">85% and above</p>
+            <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.5rem;">Keep up the good work!</p>
+          </div>
+
+          <div style="background: #fef3c7; padding: 1.5rem; border-radius: 10px; text-align: center; border: 2px solid var(--warning);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚠️</div>
+            <h4 style="color: var(--warning); margin-bottom: 0.5rem;">Satisfactory</h4>
+            <p style="color: var(--text); font-size: 0.9rem;">75% - 84%</p>
+            <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.5rem;">Maintain your attendance</p>
+          </div>
+
+          <div style="background: #fee2e2; padding: 1.5rem; border-radius: 10px; text-align: center; border: 2px solid var(--error);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">❌</div>
+            <h4 style="color: var(--error); margin-bottom: 0.5rem;">Critical</h4>
+            <p style="color: var(--text); font-size: 0.9rem;">Below 75%</p>
+            <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.5rem;">Action needed immediately!</p>
+          </div>
+        </div>
+
+        <div style="background: #e0f2fe; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--info); margin-bottom: 2rem;">
+          <h4 style="color: var(--info); margin-bottom: 0.75rem;">💡 Important Notes:</h4>
+          <ul style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li><strong>Update Frequency:</strong> Attendance is updated weekly by faculty members</li>
+            <li><strong>Leave Applications:</strong> Submit medical certificates within 3 days for medical leave</li>
+            <li><strong>On-Duty:</strong> Participation in college events counts as attendance if approved</li>
+            <li><strong>Verification:</strong> Contact your class teacher if you find any discrepancies</li>
+            <li><strong>Semester Lock:</strong> Attendance is locked 2 weeks before semester exams</li>
+          </ul>
+        </div>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 10px; border: 2px solid var(--border); margin-bottom: 2rem;">
+          <h4 style="color: var(--primary); margin-bottom: 1rem;">📞 Attendance Related Contacts:</h4>
+          <div style="display: grid; gap: 1rem;">
+            <div style="padding: 1rem; background: var(--card-bg); border-radius: 8px;">
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.25rem;">Computer Science & Engineering</p>
+              <p style="color: var(--text); font-size: 0.9rem;">📧 hod.cse@gpwsiddipet.edu.in | 📞 +91 8728 234570</p>
+            </div>
+            <div style="padding: 1rem; background: var(--card-bg); border-radius: 8px;">
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.25rem;">Electrical & Electronics Engineering</p>
+              <p style="color: var(--text); font-size: 0.9rem;">📧 hod.eee@gpwsiddipet.edu.in | 📞 +91 8728 234571</p>
+            </div>
+            <div style="padding: 1rem; background: var(--card-bg); border-radius: 8px;">
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.25rem;">Civil Engineering</p>
+              <p style="color: var(--text); font-size: 0.9rem;">📧 hod.civil@gpwsiddipet.edu.in | 📞 +91 8728 234572</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(96,0,128,0.1), rgba(255,107,157,0.1)); padding: 1.5rem; border-radius: 10px; text-align: center;">
+          <h4 style="color: var(--primary); margin-bottom: 1rem;">📱 Alternative: College Attendance System</h4>
+          <p style="color: var(--text-light); margin-bottom: 1rem;">You can also check your daily attendance through the college internal portal</p>
+          <button class="btn" onclick="alert('College internal attendance system will be available soon. Please use SBTET portal for now.')">
+            <span>Access College Portal</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hall Ticket Modal -->
+  <div id="hallticketModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🎫 Download Hall Tickets - SBTET Portal</h3>
+        <p>Complete feedback to download hall tickets</p>
+        <button class="close-btn" onclick="closeModal('hallticketModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: #fee2e2; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; text-align: center; border: 3px solid var(--error);">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
+          <h3 style="color: var(--error); margin-bottom: 1rem;">Feedback Submission Mandatory!</h3>
+          <p style="color: var(--text); margin-bottom: 1.5rem;">As per SBTET regulations, you must complete the student feedback before downloading your hall ticket. Feedback helps improve teaching quality and curriculum.</p>
+          <button onclick="openModal('feedbackModal'); closeModal('hallticketModal');" class="btn" style="background: var(--error);">
+            <span>Complete Feedback First</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem; text-align: center;">
+          <h3 style="margin-bottom: 1rem;">🎫 Official SBTET Hall Ticket Portal</h3>
+          <p style="margin-bottom: 1.5rem; opacity: 0.95;">After completing feedback, download your examination hall tickets from the official SBTET portal. Hall tickets are usually available 7-10 days before examinations.</p>
+          <a href="https://sbtet.telangana.gov.in" target="_blank" class="btn" style="background: white; color: var(--primary); display: inline-flex;">
+            <span>Go to SBTET Hall Ticket Portal</span>
+            <span>🔗</span>
+          </a>
+        </div>
+
+        <div style="background: #fef3c7; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--warning); margin-bottom: 2rem;">
+          <h4 style="color: var(--warning); margin-bottom: 0.75rem;">📋 Prerequisites for Hall Ticket Download:</h4>
+          <ol style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li>✅ <strong>Complete Student Feedback</strong> - Mandatory for all subjects</li>
+            <li>✅ <strong>Minimum 75% Attendance</strong> - Check your attendance status</li>
+            <li>✅ <strong>Fee Payment</strong> - All fees must be cleared</li>
+            <li>✅ <strong>Library Clearance</strong> - No pending books</li>
+            <li>✅ <strong>Examination Registration</strong> - Must be completed before deadline</li>
+          </ol>
+        </div>
+
+        <div style="background: #e0f2fe; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--info); margin-bottom: 2rem;">
+          <h4 style="color: var(--info); margin-bottom: 0.75rem;">📌 How to Download Hall Ticket:</h4>
+          <ol style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li><strong>Step 1:</strong> Complete feedback submission (mandatory)</li>
+            <li><strong>Step 2:</strong> Visit SBTET Hall Ticket Portal using button above</li>
+            <li><strong>Step 3:</strong> Select your examination scheme (e.g., C-16, C-18, etc.)</li>
+            <li><strong>Step 4:</strong> Enter your PIN (Hall Ticket Number)</li>
+            <li><strong>Step 5:</strong> Enter the verification code displayed</li>
+            <li><strong>Step 6:</strong> Click on "Get Hall Ticket" button</li>
+            <li><strong>Step 7:</strong> Download and save the PDF file</li>
+            <li><strong>Step 8:</strong> Take multiple printouts (at least 2 copies)</li>
+          </ol>
+        </div>
+
+        <div style="background: #fee2e2; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--error); margin-bottom: 2rem;">
+          <h4 style="color: var(--error); margin-bottom: 0.75rem;">⚠️ Important Instructions:</h4>
+          <ul style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li><strong>Mandatory Document:</strong> Hall ticket is mandatory for examination entry</li>
+            <li><strong>Feedback Completion:</strong> Cannot download without completing feedback</li>
+            <li><strong>Verification:</strong> Check all details carefully (Name, DOB, Photo, Subjects)</li>
+            <li><strong>Corrections:</strong> Report any errors to college office immediately</li>
+            <li><strong>Photo:</strong> Paste your recent passport-size photo if required</li>
+            <li><strong>Preservation:</strong> Keep hall ticket safe throughout examination period</li>
+            <li><strong>Each Day:</strong> Bring hall ticket for every examination</li>
+          </ul>
+        </div>
+
+        <div style="background: #d1fae5; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--success);">
+          <h4 style="color: var(--success); margin-bottom: 0.75rem;">✅ Details to Verify on Hall Ticket:</h4>
+          <ul style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li>Full Name (as per college records)</li>
+            <li>Date of Birth</li>
+            <li>Father's/Mother's Name</li>
+            <li>PIN (Hall Ticket Number)</li>
+            <li>College Code: <strong>520 (GPWS Siddipet)</strong></li>
+            <li>Examination Center Details</li>
+            <li>List of Subjects</li>
+            <li>Examination Dates and Timings</li>
+            <li>Photograph (if pre-printed)</li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(96,0,128,0.1), rgba(255,107,157,0.1)); border-radius: 10px;">
+          <p style="color: var(--text-light); margin-bottom: 1rem;">For hall ticket related issues, contact:</p>
+          <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem;">📧 examcell@gpwsiddipet.edu.in</p>
+          <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem;">📞 +91 8728 234567</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>⭐ Student Feedback - SBTET Portal</h3>
+        <p>Your feedback matters - Help improve education quality</p>
+        <button class="close-btn" onclick="closeModal('feedbackModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem; text-align: center;">
+          <h3 style="margin-bottom: 1rem;">📝 Official SBTET Feedback Portal</h3>
+          <p style="margin-bottom: 1.5rem; opacity: 0.95; color: #333;">Submit your honest feedback about faculty teaching methods, course content, and facilities. Your feedback is confidential and helps improve the quality of education.</p>
+          <a href="https://sbtet.telangana.gov.in/" target="_blank" class="btn" style="background: white; color: var(--primary); display: inline-flex;">
+            <span>Go to SBTET Feedback Portal</span>
+            <span>🔗</span>
+          </a>
+        </div>
+
+        <div style="background: #fee2e2; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--error); margin-bottom: 2rem;">
+          <h4 style="color: var(--error); margin-bottom: 0.75rem;">🚨 Mandatory Requirement:</h4>
+          <p style="color: var(--text); line-height: 1.8; margin-bottom: 1rem;">As per SBTET guidelines, <strong>feedback submission is mandatory</strong> before downloading hall tickets. Students who do not complete feedback will not be able to access their hall tickets.</p>
+          <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+            <p style="color: var(--error); font-weight: 600; text-align: center;">⚠️ No Feedback = No Hall Ticket</p>
+          </div>
+        </div>
+
+        <div style="background: #fef3c7; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--warning); margin-bottom: 2rem;">
+          <h4 style="color: var(--warning); margin-bottom: 0.75rem;">📌 How to Submit Feedback:</h4>
+          <ol style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li>Click on "Go to SBTET Feedback Portal" button above</li>
+            <li>Navigate to the Student Feedback section</li>
+            <li>Enter your PIN (Hall Ticket Number)</li>
+            <li>Select your college: <strong>520 - GPWS Siddipet</strong></li>
+            <li>Choose your department and semester</li>
+            <li>Rate each faculty member and subject (1-5 stars)</li>
+            <li>Provide honest and constructive feedback</li>
+            <li>Submit the feedback form</li>
+            <li>Save/Print the confirmation receipt</li>
+          </ol>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👨‍🏫</div>
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Faculty Feedback</h4>
+            <p style="color: var(--text); font-size: 0.9rem; line-height: 1.6;">Rate teaching methods, communication skills, subject knowledge, and approachability of each faculty member.</p>
+          </div>
+
+          <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Course Content</h4>
+            <p style="color: var(--text); font-size: 0.9rem; line-height: 1.6;">Evaluate course curriculum, relevance, difficulty level, and practical applicability of subjects.</p>
+          </div>
+
+          <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏫</div>
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Infrastructure</h4>
+            <p style="color: var(--text); font-size: 0.9rem; line-height: 1.6;">Share feedback on lab facilities, library, classrooms, and other college amenities.</p>
+          </div>
+        </div>
+
+        <div style="background: #e0f2fe; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--info); margin-bottom: 2rem;">
+          <h4 style="color: var(--info); margin-bottom: 0.75rem;">💡 Feedback Guidelines:</h4>
+          <ul style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li><strong>Be Honest:</strong> Your genuine feedback helps improve education quality</li>
+            <li><strong>Be Constructive:</strong> Provide specific suggestions for improvement</li>
+            <li><strong>Be Respectful:</strong> Maintain professional language throughout</li>
+            <li><strong>Be Complete:</strong> Fill all sections - incomplete feedback won't be accepted</li>
+            <li><strong>Be Timely:</strong> Submit before the deadline (usually 1 week before exams)</li>
+            <li><strong>Confidential:</strong> Your identity is kept anonymous</li>
+          </ul>
+        </div>
+
+        <div style="background: #d1fae5; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--success); margin-bottom: 2rem;">
+          <h4 style="color: var(--success); margin-bottom: 0.75rem;">✅ After Submitting Feedback:</h4>
+          <ol style="margin-left: 1.5rem; color: var(--text); line-height: 1.8;">
+            <li>You will receive a confirmation message on screen</li>
+            <li>Save or take a screenshot of the confirmation</li>
+            <li>You can now proceed to download your hall ticket</li>
+            <li>Feedback submission is one-time per semester</li>
+            <li>Cannot modify feedback after submission</li>
+          </ol>
+        </div>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 10px; border: 2px solid var(--border); margin-bottom: 2rem;">
+          <h4 style="color: var(--primary); margin-bottom: 1rem;">📊 Feedback Rating Scale:</h4>
+          <div style="display: grid; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--card-bg); border-radius: 8px;">
+              <span style="font-size: 1.5rem;">⭐⭐⭐⭐⭐</span>
+              <div>
+                <strong>5 - Excellent:</strong> Outstanding performance, exceeded expectations
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--card-bg); border-radius: 8px;">
+              <span style="font-size: 1.5rem;">⭐⭐⭐⭐</span>
+              <div>
+                <strong>4 - Very Good:</strong> Above average, met most expectations
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--card-bg); border-radius: 8px;">
+              <span style="font-size: 1.5rem;">⭐⭐⭐</span>
+              <div>
+                <strong>3 - Good:</strong> Satisfactory performance, met basic expectations
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--card-bg); border-radius: 8px;">
+              <span style="font-size: 1.5rem;">⭐⭐</span>
+              <div>
+                <strong>2 - Fair:</strong> Below average, needs improvement
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--card-bg); border-radius: 8px;">
+              <span style="font-size: 1.5rem;">⭐</span>
+              <div>
+                <strong>1 - Poor:</strong> Unsatisfactory, significant improvement needed
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(96,0,128,0.1), rgba(255,107,157,0.1)); padding: 2rem; border-radius: 10px; text-align: center;">
+          <h4 style="color: var(--primary); margin-bottom: 1rem;">🎯 Impact of Your Feedback</h4>
+          <p style="color: var(--text); margin-bottom: 1.5rem; line-height: 1.6;">Your feedback directly influences curriculum improvements, teaching methodology enhancements, and infrastructure development. It helps SBTET and our college maintain high educational standards.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">📈</div>
+              <p style="font-weight: 600; color: var(--primary);">Quality Improvement</p>
+            </div>
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🎓</div>
+              <p style="font-weight: 600; color: var(--primary);">Better Learning</p>
+            </div>
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">💪</div>
+              <p style="font-weight: 600; color: var(--primary);">Student Empowerment</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; background: #fef3c7; border-radius: 10px;">
+          <p style="color: var(--text); margin-bottom: 1rem;">For feedback related queries, contact:</p>
+          <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem;">📧 feedback@gpwsiddipet.edu.in</p>
+          <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem;">📞 +91 8728 234569</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timetable Modal -->
+  <div id="timetableModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>📅 Class Timetable</h3>
+        <p>View your weekly schedule</p>
+        <button class="close-btn" onclick="closeModal('timetableModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Select Department</label>
+          <select id="timetableDept" onchange="loadTimetable()">
+            <option value="CSE">Computer Science & Engineering</option>
+            <option value="EEE">Electrical & Electronics Engineering</option>
+            <option value="CIVIL">Civil Engineering</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Select Semester</label>
+          <select id="timetableSem" onchange="loadTimetable()">
+            <option value="1">Semester I</option>
+            <option value="2">Semester II</option>
+            <option value="3">Semester III</option>
+            <option value="4">Semester IV</option>
+            <option value="5">Semester V</option>
+            <option value="6">Semester VI</option>
+          </select>
+        </div>
+
+        <div class="timetable-container">
+          <table class="timetable">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+              </tr>
+            </thead>
+            <tbody id="timetableBody">
+              <!-- Timetable will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <button class="btn" onclick="downloadTimetable()">
+            <span>Download Timetable</span>
+            <span>⬇</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications Modal -->
+   <!-- Notifications Modal -->
+  <div id="notificationsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🔔 Notifications & Announcements</h3>
+        <p>Stay updated with latest information</p>
+        <button class="close-btn" onclick="closeModal('notificationsModal')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="notification-item urgent">
+          <div class="notification-icon">🚨</div>
+          <div class="notification-content">
+            <h4>Urgent: Exam Registration Deadline Extended</h4>
+            <p>The last date for semester examination registration has been extended to November 25, 2025. Students who haven't registered yet should complete the process immediately to avoid late fees.</p>
+            <p class="notification-date">📅 Posted: November 15, 2025</p>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="notification-icon">📢</div>
+          <div class="notification-content">
+            <h4>Mid-Term-II  results are coming soon.</h4>
+            <p>The mid-term-II for Semester III,  V, and I has been going to published. Students can check their results from the  student portal of results section. </p>
+            <p class="notification-date">📅 Posted: November 15, 2025</p>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="notification-icon">🏆</div>
+          <div class="notification-content">
+            <h4>Technical Fest "Srujana Tech 2025" Registrations Open</h4>
+            <p>Annual technical festival registrations are now open for all students. Multiple competitions including coding, project presentations, and hackathons. Register before November 25, 2025.</p>
+            <p class="notification-date">📅 Posted: November 15, 2025</p>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="notification-icon">📚</div>
+          <div class="notification-content">
+            <h4>Library Extended Hours During Exams</h4>
+            <p>The college library will remain open till 8:00 PM on weekdays and 4:00 PM on Saturdays during the examination period (December 1-6, 2025) to facilitate student preparation.</p>
+            <p class="notification-date">📅 Posted: November 10, 2025</p>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="notification-icon">🎓</div>
+          <div class="notification-content">
+            <h4>Industrial Visit to IT Tower Siddipet.</h4>
+            <p>Department of Computer Science is organizing an industrial visit to IT Tower,Siddipet on November 14, 2025. Interested students should contact the department HOD.</p>
+            <p class="notification-date">📅 Posted: November 11, 2025</p>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="notification-icon">💼</div>
+          <div class="notification-content">
+            <h4>Campus Placement Drive - TCS & Infosys</h4>
+            <p>Campus recruitment drive scheduled for December 15-20, 2025. Eligible students (6th semester) should register with the placement cell. Pre-placement training sessions will be conducted from December 1st.</p>
+            <p class="notification-date">📅 Posted: November 5, 2025</p>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="notification-icon">🌱</div>
+          <div class="notification-content">
+            <h4>Haritha Haram - Tree Plantation Drive</h4>
+            <p>As part of the state government's Haritha Haram initiative, a tree plantation drive will be organized on November 20, 2025. All students are encouraged to participate.</p>
+            <p class="notification-date">📅 Posted: November 3, 2025</p>
+          </div>
+        </div>
+
+        <div class="notification-item">
+          <div class="notification-icon">⚽</div>
+          <div class="notification-content">
+            <h4>Inter-Polytechnic Sports Meet 2025</h4>
+            <p>Selection trials for District Level Sports Meet will be held soon... Students interested in athletics, volleyball, badminton, and kabaddi should register with the sports coordinator.</p>
+            <p class="notification-date">📅 Posted: November 1, 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    // Timetable data for different departments and semesters
+    const timetableData = {
+      CSE: {
+        3: [
+          {
+            time: '9:30-10:00',
+            monday: { code: 'CS301', name: 'Data Structures' },
+            tuesday: { code: 'CS302', name: 'DBMS' },
+            wednesday: { code: 'CS303', name: 'Web Technologies' },
+            thursday: { code: 'CS301', name: 'Data Structures' },
+            friday: { code: 'CS304', name: 'OOP with Java' },
+            saturday: { code: 'CS302', name: 'DBMS' }
+          },
+          {
+            time: '10:00-11:00',
+            monday: { code: 'CS302', name: 'DBMS' },
+            tuesday: { code: 'CS301', name: 'Data Structures' },
+            wednesday: { code: 'CS304', name: 'OOP with Java' },
+            thursday: { code: 'CS303', name: 'Web Technologies' },
+            friday: { code: 'CS301', name: 'Data Structures' },
+            saturday: { special: 'Lab Sessions', colspan: 1, bg: '#f0f0f0' }
+          },
+          { time: 'Break', special: '☕ Break', colspan: 6, bg: '#fef3c7' },
+          {
+            time: '11:30-12:30',
+            monday: { code: 'CS305', name: 'Mathematics-III' },
+            tuesday: { code: 'CS304', name: 'OOP with Java' },
+            wednesday: { code: 'CS302', name: 'DBMS' },
+            thursday: { code: 'CS305', name: 'Mathematics-III' },
+            friday: { code: 'CS303', name: 'Web Technologies' },
+            saturday: { special: 'Lab Sessions', rowspan: 2, bg: '#e0f2fe' }
+          },
+          {
+            time: '12:30-1:30',
+            monday: { special: 'Data Structures Lab', colspan: 2, bg: '#e0f2fe' },
+            wednesday: { special: 'DBMS Lab', colspan: 2, bg: '#ddd6fe' },
+            friday: { special: 'Web Tech Lab', colspan: 1, bg: '#fce7f3' }
+          }
+        ],
+        5: [
+          {
+            time: '9:00-10:00',
+            monday: { code: 'CS501', name: 'Software Engineering' },
+            tuesday: { code: 'CS502', name: 'Computer Networks' },
+            wednesday: { code: 'CS503', name: 'AI & ML' },
+            thursday: { code: 'CS501', name: 'Software Engineering' },
+            friday: { code: 'CS504', name: 'Python Programming' },
+            saturday: { code: 'CS502', name: 'Computer Networks' }
+          },
+          {
+            time: '10:00-11:00',
+            monday: { code: 'CS502', name: 'Computer Networks' },
+            tuesday: { code: 'CS503', name: 'AI & ML' },
+            wednesday: { code: 'CS504', name: 'Python Programming' },
+            thursday: { code: 'CS502', name: 'Computer Networks' },
+            friday: { code: 'CS503', name: 'AI & ML' },
+            saturday: { special: 'Project Work', colspan: 1, bg: '#f0f0f0' }
+          },
+          { time: 'Break', special: '☕ Break', colspan: 6, bg: '#fef3c7' },
+          {
+            time: '11:30-12:30',
+            monday: { code: 'CS505', name: 'Cyber Security' },
+            tuesday: { code: 'CS504', name: 'Python Programming' },
+            wednesday: { code: 'CS501', name: 'Software Engineering' },
+            thursday: { code: 'CS505', name: 'Cyber Security' },
+            friday: { code: 'CS501', name: 'Software Engineering' },
+            saturday: { special: 'Lab Sessions', rowspan: 2, bg: '#e0f2fe' }
+          },
+          {
+            time: '12:30-1:30',
+            monday: { special: 'Python Lab', colspan: 2, bg: '#e0f2fe' },
+            wednesday: { special: 'AI/ML Lab', colspan: 2, bg: '#ddd6fe' },
+            friday: { special: 'Networks Lab', colspan: 1, bg: '#fce7f3' }
+          }
+        ]
+      },
+      EEE: {
+        3: [
+          {
+            time: '9:00-10:00',
+            monday: { code: 'EE301', name: 'Electrical Machines-I' },
+            tuesday: { code: 'EE302', name: 'Power Systems' },
+            wednesday: { code: 'EE303', name: 'Control Systems' },
+            thursday: { code: 'EE301', name: 'Electrical Machines-I' },
+            friday: { code: 'EE304', name: 'Electronic Devices' },
+            saturday: { code: 'EE302', name: 'Power Systems' }
+          },
+          {
+            time: '10:00-11:00',
+            monday: { code: 'EE302', name: 'Power Systems' },
+            tuesday: { code: 'EE303', name: 'Control Systems' },
+            wednesday: { code: 'EE304', name: 'Electronic Devices' },
+            thursday: { code: 'EE302', name: 'Power Systems' },
+            friday: { code: 'EE301', name: 'Electrical Machines-I' },
+            saturday: { special: 'Workshop', colspan: 1, bg: '#f0f0f0' }
+          },
+          { time: 'Break', special: '☕ Break', colspan: 6, bg: '#fef3c7' },
+          {
+            time: '11:30-12:30',
+            monday: { code: 'EE305', name: 'Mathematics-III' },
+            tuesday: { code: 'EE304', name: 'Electronic Devices' },
+            wednesday: { code: 'EE301', name: 'Electrical Machines-I' },
+            thursday: { code: 'EE305', name: 'Mathematics-III' },
+            friday: { code: 'EE303', name: 'Control Systems' },
+            saturday: { special: 'Lab Sessions', rowspan: 2, bg: '#e0f2fe' }
+          },
+          {
+            time: '12:30-1:30',
+            monday: { special: 'Machines Lab', colspan: 2, bg: '#e0f2fe' },
+            wednesday: { special: 'Electronics Lab', colspan: 2, bg: '#ddd6fe' },
+            friday: { special: 'Control Systems Lab', colspan: 1, bg: '#fce7f3' }
+          }
+        ],
+        5: [
+          {
+            time: '9:00-10:00',
+            monday: { code: 'EE501', name: 'Power Electronics' },
+            tuesday: { code: 'EE502', name: 'Microprocessors' },
+            wednesday: { code: 'EE503', name: 'Renewable Energy' },
+            thursday: { code: 'EE501', name: 'Power Electronics' },
+            friday: { code: 'EE504', name: 'Industrial Automation' },
+            saturday: { code: 'EE502', name: 'Microprocessors' }
+          },
+          {
+            time: '10:00-11:00',
+            monday: { code: 'EE502', name: 'Microprocessors' },
+            tuesday: { code: 'EE503', name: 'Renewable Energy' },
+            wednesday: { code: 'EE504', name: 'Industrial Automation' },
+            thursday: { code: 'EE502', name: 'Microprocessors' },
+            friday: { code: 'EE503', name: 'Renewable Energy' },
+            saturday: { special: 'Project Work', colspan: 1, bg: '#f0f0f0' }
+          },
+          { time: 'Break', special: '☕ Break', colspan: 6, bg: '#fef3c7' },
+          {
+            time: '11:30-12:30',
+            monday: { code: 'EE505', name: 'Electrical Design' },
+            tuesday: { code: 'EE504', name: 'Industrial Automation' },
+            wednesday: { code: 'EE501', name: 'Power Electronics' },
+            thursday: { code: 'EE505', name: 'Electrical Design' },
+            friday: { code: 'EE501', name: 'Power Electronics' },
+            saturday: { special: 'Lab Sessions', rowspan: 2, bg: '#e0f2fe' }
+          },
+          {
+            time: '12:30-1:30',
+            monday: { special: 'Power Electronics Lab', colspan: 2, bg: '#e0f2fe' },
+            wednesday: { special: 'Microprocessor Lab', colspan: 2, bg: '#ddd6fe' },
+            friday: { special: 'Renewable Energy Lab', colspan: 1, bg: '#fce7f3' }
+          }
+        ]
+      },
+      CIVIL: {
+        3: [
+          {
+            time: '9:00-10:00',
+            monday: { code: 'CE301', name: 'Structural Analysis' },
+            tuesday: { code: 'CE302', name: 'Fluid Mechanics' },
+            wednesday: { code: 'CE303', name: 'Concrete Technology' },
+            thursday: { code: 'CE301', name: 'Structural Analysis' },
+            friday: { code: 'CE304', name: 'Surveying-II' },
+            saturday: { code: 'CE302', name: 'Fluid Mechanics' }
+          },
+          {
+            time: '10:00-11:00',
+            monday: { code: 'CE302', name: 'Fluid Mechanics' },
+            tuesday: { code: 'CE303', name: 'Concrete Technology' },
+            wednesday: { code: 'CE304', name: 'Surveying-II' },
+            thursday: { code: 'CE302', name: 'Fluid Mechanics' },
+            friday: { code: 'CE301', name: 'Structural Analysis' },
+            saturday: { special: 'Field Work', colspan: 1, bg: '#f0f0f0' }
+          },
+          { time: 'Break', special: '☕ Break', colspan: 6, bg: '#fef3c7' },
+          {
+            time: '11:30-12:30',
+            monday: { code: 'CE305', name: 'Mathematics-III' },
+            tuesday: { code: 'CE304', name: 'Surveying-II' },
+            wednesday: { code: 'CE301', name: 'Structural Analysis' },
+            thursday: { code: 'CE305', name: 'Mathematics-III' },
+            friday: { code: 'CE303', name: 'Concrete Technology' },
+            saturday: { special: 'Lab Sessions', rowspan: 2, bg: '#e0f2fe' }
+          },
+          {
+            time: '12:30-1:30',
+            monday: { special: 'Concrete Lab', colspan: 2, bg: '#e0f2fe' },
+            wednesday: { special: 'Fluid Mechanics Lab', colspan: 2, bg: '#ddd6fe' },
+            friday: { special: 'Surveying Lab', colspan: 1, bg: '#fce7f3' }
+          }
+        ],
+        5: [
+          {
+            time: '9:00-10:00',
+            monday: { code: 'CE501', name: 'Design of Structures' },
+            tuesday: { code: 'CE502', name: 'Construction Management' },
+            wednesday: { code: 'CE503', name: 'Environmental Engg' },
+            thursday: { code: 'CE501', name: 'Design of Structures' },
+            friday: { code: 'CE504', name: 'Highway Engineering' },
+            saturday: { code: 'CE502', name: 'Construction Management' }
+          },
+          {
+            time: '10:00-11:00',
+            monday: { code: 'CE502', name: 'Construction Management' },
+            tuesday: { code: 'CE503', name: 'Environmental Engg' },
+            wednesday: { code: 'CE504', name: 'Highway Engineering' },
+            thursday: { code: 'CE502', name: 'Construction Management' },
+            friday: { code: 'CE503', name: 'Environmental Engg' },
+            saturday: { special: 'Project Work', colspan: 1, bg: '#f0f0f0' }
+          },
+          { time: 'Break', special: '☕ Break', colspan: 6, bg: '#fef3c7' },
+          {
+            time: '11:30-12:30',
+            monday: { code: 'CE505', name: 'Estimation & Costing' },
+            tuesday: { code: 'CE504', name: 'Highway Engineering' },
+            wednesday: { code: 'CE501', name: 'Design of Structures' },
+            thursday: { code: 'CE505', name: 'Estimation & Costing' },
+            friday: { code: 'CE501', name: 'Design of Structures' },
+            saturday: { special: 'Lab Sessions', rowspan: 2, bg: '#e0f2fe' }
+          },
+          {
+            time: '12:30-1:30',
+            monday: { special: 'CAD Lab', colspan: 2, bg: '#e0f2fe' },
+            wednesday: { special: 'Environmental Lab', colspan: 2, bg: '#ddd6fe' },
+            friday: { special: 'Highway Lab', colspan: 1, bg: '#fce7f3' }
+          }
+        ]
+      }
+    };
+
+    // Load timetable based on selection
+    function loadTimetable() {
+      const dept = document.getElementById('timetableDept').value;
+      const sem = document.getElementById('timetableSem').value;
+      const tbody = document.getElementById('timetableBody');
+      
+      const schedule = timetableData[dept]?.[sem] || timetableData.CSE[3];
+      
+      tbody.innerHTML = '';
+      
+      schedule.forEach(row => {
+        const tr = document.createElement('tr');
+        
+        if (row.time === 'Break') {
+          tr.innerHTML = `<td><strong>11:00-11:30</strong></td>
+                          <td colspan="${row.colspan}" style="background: ${row.bg}; text-align: center; font-weight: 600;">${row.special}</td>`;
+        } else {
+          let html = `<td><strong>${row.time}</strong></td>`;
+          
+          const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+          let skipNext = 0;
+          
+          days.forEach((day, index) => {
+            if (skipNext > 0) {
+              skipNext--;
+              return;
+            }
+            
+            const slot = row[day];
+            if (slot) {
+              if (slot.special) {
+                const colspanAttr = slot.colspan ? `colspan="${slot.colspan}"` : '';
+                const rowspanAttr = slot.rowspan ? `rowspan="${slot.rowspan}"` : '';
+                const bgStyle = slot.bg ? `background: ${slot.bg};` : '';
+                html += `<td ${colspanAttr} ${rowspanAttr} style="${bgStyle} text-align: center; vertical-align: middle;">${slot.special}</td>`;
+                if (slot.colspan) skipNext = slot.colspan - 1;
+              } else {
+                html += `<td><span class="subject-code">${slot.code}</span><br>${slot.name}</td>`;
+              }
+            } else if (index < 5) {
+              html += '<td>-</td>';
+            }
+          });
+          
+          tr.innerHTML = html;
+        }
+        
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      if (modalId === 'timetableModal') {
+        loadTimetable();
+      }
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Download functions
+    function downloadTimetable() {
+      alert('Timetable PDF download will start shortly.');
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadTimetable();
+    });
+  </script>
+</body>
+
+</html>

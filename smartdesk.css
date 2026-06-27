@@ -1,0 +1,210 @@
+/* SmartDesk Chatbot – Violet Gold Glow Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.smartdesk-root * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+/* Chatbot Icon */
+.smartdesk-icon {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 78px;
+  height: 78px;
+  background: linear-gradient(135deg, #b5179e 0%, #7209b7 50%, #3a0ca3 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(114, 9, 183, 0.45), 0 2px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 99999;
+  transition: all .25s ease;
+}
+.smartdesk-icon:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(181, 23, 158, 0.5);
+}
+
+/* Bot Face */
+.smartdesk-face {
+  width: 48px;
+  height: 40px;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -2px 6px rgba(0,0,0,0.1);
+}
+.smartdesk-eye {
+  width: 8px; height: 8px;
+  background: #3a0ca3;
+  border-radius: 50%;
+  position: absolute; top: 12px;
+  animation: sd-blink 3000ms infinite;
+}
+.smartdesk-eye.left { left: 12px; }
+.smartdesk-eye.right { right: 12px; }
+
+/* Antenna */
+.smartdesk-antenna {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 10px;
+  background: linear-gradient(180deg, #fcd34d, #f59e0b);
+  border-radius: 3px;
+}
+
+/* Tooltip */
+.smartdesk-tooltip {
+  position: absolute;
+  bottom: 92px;
+  right: 0;
+  transform: translateX(-10px);
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 8px 30px rgba(58, 12, 163, 0.15);
+  color: #2a1040;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s ease;
+}
+.smartdesk-icon:hover + .smartdesk-tooltip { opacity: 1; transform: translateY(-6px); }
+
+/* Chat Popup */
+.smartdesk-popup {
+  position: fixed;
+  right: 22px;
+  bottom: 110px;
+  width: 360px;
+  height: 520px;
+  background: linear-gradient(180deg, #ffffffee, #f8f5ff);
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(114, 9, 183, 0.25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 99998;
+  border: 1px solid rgba(181, 23, 158, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Header */
+.smartdesk-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, #b5179e, #7209b7, #3a0ca3);
+  color: white;
+}
+.smartdesk-header .avatar {
+  width: 44px; height: 44px;
+  border-radius: 10px; overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+.smartdesk-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.smartdesk-header .close-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Body */
+.smartdesk-body {
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: linear-gradient(180deg, #fdfbff, #f3e8ff);
+  flex: 1;
+}
+
+/* Messages */
+.sd-bubble {
+  padding: 10px 14px;
+  border-radius: 14px;
+  max-width: 84%;
+  line-height: 1.4;
+  display: inline-block;
+}
+.sd-bot {
+  background: linear-gradient(180deg, #ede9fe, #f3e8ff);
+  color: #2b1a4d;
+  align-self: flex-start;
+  border: 1px solid rgba(181, 23, 158, 0.2);
+}
+.sd-user {
+  background: linear-gradient(90deg, #fef3c7, #fde68a);
+  color: #4b2f00;
+  align-self: flex-end;
+  border: 1px solid rgba(249, 213, 177, 0.6);
+}
+
+/* Input */
+.smartdesk-input {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid rgba(114, 9, 183, 0.2);
+  background: transparent;
+}
+.smartdesk-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(181, 23, 158, 0.25);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+}
+.smartdesk-input button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #fcd34d, #f59e0b);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.25);
+  color: #2b1700;
+  font-weight: 600;
+  transition: all .2s ease;
+}
+.smartdesk-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
+}
+
+/* Typing Indicator */
+.sd-typing {
+  font-style: italic;
+  color: #7e22ce;
+  padding: 6px 10px;
+}
+
+/* Small devices */
+@media (max-width:480px) {
+  .smartdesk-popup { right: 12px; left:12px; bottom: 90px; width: auto; height: 70vh; }
+  .smartdesk-icon { right: 18px; bottom: 18px; width:64px; height:64px; }
+}
+
+/* Animation */
+@keyframes sd-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  96% { transform: scaleY(0.2); }
+}

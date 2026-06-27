@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Department - GPWS Siddipet</title>
+    <link rel="stylesheet" href="smartdesk.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <style>
+    :root {
+      --primary-purple: #7c3aed;
+      --primary-light: #a78bfa;
+      --accent-gold: #f59e0b;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: var(--gray-50);
+    }
+
+    header {
+      background: var(--white);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+     .logo img{
+      width:50px;
+      height: 50px;
+      border-radius:10px;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary-purple), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .logo-text h1 {
+      font-size: 1.3rem;
+      color: var(--primary-purple);
+      font-weight: 700;
+    }
+
+    .back-btn {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary-purple), var(--primary-light));
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+
+    .back-btn:hover { transform: translateY(-2px); }
+
+    .dept-hero {
+      background: linear-gradient(135deg, var(--primary-purple), var(--primary-light));
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dept-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .dept-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dept-icon-large {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+
+    .dept-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .dept-hero p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-purple);
+      margin-bottom: 2rem;
+      font-weight: 700;
+      border-left: 5px solid var(--primary-light);
+      padding-left: 1rem;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .overview-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-top: 4px solid var(--primary-light);
+      transition: transform 0.3s;
+    }
+
+    .overview-card:hover { transform: translateY(-5px); }
+
+    .overview-card h3 {
+      color: var(--primary-purple);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .overview-card p, .overview-card ul {
+      color: var(--gray-700);
+      line-height: 1.8;
+    }
+
+    .overview-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .overview-card ul li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .overview-card ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-light);
+      font-weight: bold;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .faculty-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .faculty-card:hover { transform: translateY(-5px); }
+
+    .faculty-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+    }
+
+    .faculty-info { padding: 1.5rem; }
+
+    .faculty-info h4 {
+      color: var(--primary-purple);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .faculty-info .designation {
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .faculty-info .qualification {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+
+    .subjects-section {
+      margin-bottom: 4rem;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .subject-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--primary-light);
+      transition: transform 0.3s;
+    }
+
+    .subject-card:hover { transform: translateY(-5px); }
+
+    .subject-card h4 {
+      color: var(--primary-purple);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .subject-card p {
+      color: var(--gray-700);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .topics-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .topics-list li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--gray-700);
+      font-size: 0.95rem;
+    }
+
+    .topics-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary-purple);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .facility-card {
+      background: linear-gradient(135deg, #faf5ff, #ffffff);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--accent-gold);
+      transition: transform 0.3s;
+    }
+
+    .facility-card:hover { transform: translateY(-5px); }
+
+    .facility-card h4 {
+      color: var(--primary-purple);
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .facility-card p { color: var(--gray-700); line-height: 1.7; }
+
+    .activities-section {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 4rem;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .activity-item {
+      padding: 1.5rem;
+      background: var(--gray-50);
+      border-radius: 10px;
+      border-left: 3px solid var(--primary-purple);
+    }
+
+    .activity-item h5 {
+      color: var(--primary-purple);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .activity-item p {
+      color: var(--gray-700);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .dept-hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.8rem; }
+      .overview-grid, .faculty-grid, .subjects-grid, .facilities-grid, .activities-grid { 
+        grid-template-columns: 1fr; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <div class="logo">
+            <img src="assets/logo2.png" alt="gpw">
+          </div>
+        </div>
+        <div class="logo-text">
+          <h1>Government Polytechnic for Women,Siddipet</h1>
+        </div>
+      </a>
+      <a href="index.html#departments" class="back-btn">← Back to Home</a>
+    </nav>
+  </header>
+
+  <section class="dept-hero">
+    <div class="dept-hero-content">
+      <div class="dept-icon-large">📚</div>
+      <h1>General Department</h1>
+      <p>Building strong foundations through comprehensive education in sciences, mathematics, humanities, and communication skills essential for technical excellence</p>
+    </div>
+  </section>
+
+  <div class="content-section">
+    <h2 class="section-title">Department Overview</h2>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <h3>📚 About Department</h3>
+        <p>The General Department serves as the backbone of technical education, providing foundational knowledge in Mathematics, Physics, Chemistry, English, and other essential subjects. We prepare students with the core competencies required for engineering excellence.</p>
+      </div>
+      <div class="overview-card">
+        <h3>🎯 Our Role</h3>
+        <ul>
+          <li>First year teaching for all branches</li>
+          <li>Foundation courses in sciences</li>
+          <li>Mathematics & statistics</li>
+          <li>English communication skills</li>
+          <li>Environmental studies</li>
+          <li>Physics</li>
+          <li>Basic engineering drawing</li>
+        </ul>
+      </div>
+      <div class="overview-card">
+        <h3>💡 Focus Areas</h3>
+        <ul>
+          <li>Strong conceptual understanding</li>
+          <li>Practical applications</li>
+          <li>Problem-solving skills</li>
+          <li>Communication proficiency</li>
+          <li>Analytical thinking</li>
+          <li>Holistic development</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Vision & Mission</h2>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <h3>🔭 Vision</h3>
+        <p>To be a center of excellence in foundational education, nurturing young minds with strong scientific temper, analytical abilities, and effective communication skills that form the bedrock of successful engineering careers.</p>
+      </div>
+      <div class="overview-card">
+        <h3>🎯 Mission</h3>
+        <ul>
+          <li>Provide quality foundational education</li>
+          <li>Develop scientific and analytical thinking</li>
+          <li>Enhance communication skills</li>
+          <li>Foster creativity and innovation</li>
+          <li>Build ethical and social values</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Our Faculty</h2>
+    <div class="faculty-grid">
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon1.jpg" alt="HOD">
+        <div class="faculty-info">
+          <h4>G.Ganesh Kumar</h4>
+          <p class="designation">Head of Department & Lecturer(English)</p>
+          <p class="qualification">M.A (English),PGDELT<br>19+ years experience</p>
+        </div>
+      </div>
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon1.jpg" alt="Faculty">
+        <div class="faculty-info">
+          <h4>Mr.B.Bikya Nayak</h4>
+          <p class="designation">Lecturer (Maths)</p>
+          <p class="qualification">M.Sc (Maths), B.sc(MPC)<br>14+ years experience</p>
+        </div>
+      </div>
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon2.jpg" alt="Faculty">
+        <div class="faculty-info">
+          <h4>Mrs.Mounika Kasarla</h4>
+          <p class="designation">lecturer (Chemistry)</p>
+          <p class="qualification">M.Sc (Organic Chemistry)<br>14 years experience</p>
+        </div>
+      </div>
+      <div class="faculty-card">
+        <img class="faculty-img" src="assets/user-icon1.jpg" alt="Faculty">
+        <div class="faculty-info">
+          <h4>Mr.P.Tejasvi Gupta</h4>
+          <p class="designation">Guest lecturer (English)</p>
+          <p class="qualification">M.Sc (Physics),M.B.A<br>B.Sc(MPC)<br>20+ years experience</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Subjects Taught</h2>
+    <div class="subjects-section">
+      <div class="subjects-grid">
+        <div class="subject-card">
+          <h4>📐 Engineering Mathematics</h4>
+          <p>Comprehensive coverage of mathematical concepts essential for engineering applications.</p>
+          <ul class="topics-list">
+            <li>Differential Equations</li>
+            <li>Integrations</li>
+            <li>Linear Algebra</li>
+            <li>Vector Calculus</li>
+            <li>Complex Variables</li>
+            <li>Probability & Statistics</li>
+            <li>Numerical Methods</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <h4>🔬 Engineering Physics</h4>
+          <p>Fundamental physics concepts with engineering applications and practical experiments.</p>
+          <ul class="topics-list">
+            <li>Mechanics & Properties of Matter</li>
+            <li>Waves & Oscillations</li>
+            <li>Optics</li>
+            <li>Thermodynamics</li>
+            <li>Electromagnetism</li>
+            <li>Modern Physics</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <h4>🧪 Engineering Chemistry</h4>
+          <p>Chemistry principles relevant to materials, fuels, and engineering processes.</p>
+          <ul class="topics-list">
+            <li>Ecosystems & Biodiversity</li>
+            <li>Water Chemistry</li>
+            <li>Electrochemistry & Batteries</li>
+            <li>Polymers & Composites</li>
+            <li>Fuels & Combustion</li>
+            <li>Corrosion & Prevention</li>
+            <li>Environmental Chemistry</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <h4>🗣️ English & Communication</h4>
+          <p>Developing effective communication skills for professional and academic success.</p>
+          <ul class="topics-list">
+            <li>Grammar & Vocabulary</li>
+            <li>Public Speaking</li>
+            <li>Technical Writing</li>
+            <li>Presentation Skills</li>
+            <li>Business Communication</li>
+            <li>Report Writing</li>
+            <li>Leadership skils</li>
+            <li>Group Discussions..</li>
+          </ul>
+        </div>
+
+        <div class="subject-card">
+          <h4>✏️ Engineering Drawing</h4>
+          <p>Fundamentals of technical drawing and visualization for engineering design.</p>
+          <ul class="topics-list">
+            <li>Orthographic Projections</li>
+            <li>Isometric Views</li>
+            <li>Sections & Development</li>
+            <li>AutoCAD Basics</li>
+            <li>Assembly Drawings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Laboratories & Facilities</h2>
+    <div class="facilities-grid">
+      <div class="facility-card">
+        <h4>🔬 Physics Laboratory</h4>
+        <p>Well-equipped lab with modern instruments for experiments in mechanics, optics, electricity, and modern physics. Students perform hands-on experiments to understand theoretical concepts.</p>
+      </div>
+      <div class="facility-card">
+        <h4>🧪 Chemistry Laboratory</h4>
+        <p>Fully equipped chemistry lab for analytical and physical chemistry experiments. Includes facilities for titrations, qualitative analysis, and material testing.</p>
+      </div>
+      <div class="facility-card">
+        <h4>💻 Computer Lab</h4>
+        <p>Modern computer lab with latest software for CAD, programming, MS Excel. Students learn AutoCAD, and other engineering softwares.</p>
+      </div>
+      <div class="facility-card">
+        <h4>📚 Library Resources</h4>
+        <p>Extensive collection of reference books, journals, and digital resources for mathematics, physics, chemistry, and communication skills development.</p>
+      </div>
+      <div class="facility-card">
+        <h4>🎙️ Language Lab</h4>
+        <p>Dedicated language lab with audio-visual aids for enhancing English communication skills, pronunciation, and listening comprehension.</p>
+      </div>
+      <div class="facility-card">
+        <h4>✏️ Drawing Halls</h4>
+        <p>Spacious drawing hall with individual drawing boards, instruments, and CAD workstations for learning technical drawing and design fundamentals.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Co-curricular Activities</h2>
+    <div class="activities-section">
+      <div class="activities-grid">
+        <div class="activity-item">
+          <h5>📖 Quiz Competitions</h5>
+          <p>Regular quiz contests in science, mathematics, and general knowledge to enhance learning</p>
+        </div>
+        <div class="activity-item">
+          <h5>🎭 Cultural Programs</h5>
+          <p>Literary activities, debates, essay competitions, and cultural events throughout the year</p>
+        </div>
+        <div class="activity-item">
+          <h5>🔬 Science Exhibitions</h5>
+          <p>Annual science fair showcasing student projects and innovative experiments</p>
+        </div>
+        <div class="activity-item">
+          <h5>🎤 Guest Lectures</h5>
+          <p>Regular seminars and lectures by eminent scientists and academicians</p>
+        </div>
+        <div class="activity-item">
+          <h5>📝 Model Making</h5>
+          <p>Engineering model competitions to develop creativity and practical skills</p>
+        </div>
+        <div class="activity-item">
+          <h5>🌟 Personality Development</h5>
+          <p>Workshops on soft skills, communication, and leadership development</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Student Achievements</h2>
+    <div class="facilities-grid">
+      <div class="facility-card">
+        <h4>🏆 State Level Competitions</h4>
+        <p>Students consistently participate in mathematics and science competitions in all level</p>
+      </div>
+      <div class="facility-card">
+        <h4>📚 Academic Excellence</h4>
+        <p>Highest pass percentage in first year with many students scoring distinction marks</p>
+      </div>
+      <div class="facility-card">
+        <h4>🎯 Project Exhibitions</h4>
+        <p>Best project awards in inter-collegiate science and engineering exhibitions</p>
+      </div>
+      <div class="facility-card">
+        <h4>💬 Communication Skills</h4>
+        <p>Students excel in debate competitions, Quiz contests, and essay writing</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Government Polytechnic for Women, Siddipet. All rights reserved.</p>
+  </footer>
+   <script src="smartdesk.js"></script>
+</body>
+</html>
